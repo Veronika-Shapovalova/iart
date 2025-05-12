@@ -1,0 +1,576 @@
+.photo {
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    }
+
+li {
+    margin-bottom: 10px;
+    }
+
+li a {
+    display: inline-block;  
+    padding: 9px 15px;
+    background-color: #000000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    }
+li a:hover {
+background-color: #2d2b2d;
+            }
+            .emblem-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+
+
+/*для раздела "Почему именно мы?"*/
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-top: 35px;
+}
+
+.image-container > div {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.image-container img {
+    width: 10%;
+    height: auto;
+    display: block; /* Устанавливаем блок для центрирования */
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+.text-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-text {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #000000;
+}
+
+/*для меню*/
+nav {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-toggle {
+    background-color: #00000051;
+    border: none;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+
+#dropdown-menu {
+    position: absolute;
+    background-color: black; /* Изменено с rgba на black */
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+    z-index: 1;
+}
+#dropdown-menu li {
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+}
+
+#dropdown-menu li:hover {
+    background-color: #00000051;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+
+
+
+ /* для ваш текст здесь*/
+.bottom-right-text {
+    position: fixed;
+    bottom: 20px; /* Расстояние от нижней границы экрана */
+    right: 20px; /* Расстояние от правой границы экрана */
+    z-index: 9999; /* Устанавливает порядок слоев */
+    font-size: 14px; /* Размер шрифта текста */
+    color: #ffffff; /* Цвет текста */
+    background-color: rgba(0, 0, 0, 0.7); /* Фоновое изображение */
+    padding: 10px 15px; /* Поля вокруг текста */
+    border-radius: 5px; /* Скругленные углы */
+}
+
+.bottom-right-text p {
+    margin: 0; /* Убирает отступы внутри параграфа */
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Стили для плавной прокрутки */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/*Для пункта информация*/
+#information {
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 20px; /* Increased padding for spacing */
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.text {
+    flex: 1;
+    margin-right: 30px; /* Space between text and images */
+}
+
+.image-contain {
+    position: relative;
+}
+
+.image1 {
+    width: 650px; /* Уменьшение размера изображения */
+    height: auto;
+    filter: blur(2px); /* Нечеткие границы */
+}
+
+.image2 {
+    position: absolute;
+    top: 180px; /* Adjust as needed */
+    right: 200px; /* Align to the left */
+    width: 650px; /* Increased width for larger images */
+    height: auto;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond shape */
+}
+
+.circle {
+    position: absolute;
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white; /* Optional border for circles */
+}
+
+.circle1 {
+    top: 100px; /* Adjust position */
+    left: -30px; /* Adjust position */
+}
+
+.circle2 {
+    top: 50px; /* Adjust position */
+    left: 100px; /* Adjust position */
+}
+
+.circle img {
+    width: 400%;
+    height: auto;
+    position: absolute;
+    top: 50%; /* Center image vertically */
+    left: 50%; /* Center image horizontally */
+    transform: translate(-50%, -50%);
+}
+
+.contenty { 
+    background-color: #faf7ff; /* светло-серый цвет */ 
+    padding: 40px; /* увеличенные отступы */ 
+    margin: 0; /* убираем отступы */ 
+    width: 100%; /* ширина на всю ширину экрана */
+    min-height: 300px; /* минимальная высота полосы */ 
+ }
+
+
+
+
+ #video {
+    margin-top: 120px;
+    margin-bottom: 30px;
+  }
+  
+  .cont {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 170px;
+    padding-top: 40px;
+  }
+  
+  .left-column,
+  .right-column {
+    width: 50%;
+  }
+  
+  .circle-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .circle-wrapper1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  .text {
+    padding-right: 40px;
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .cont {
+      flex-direction: column;
+    }
+  
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+  }
+  
+
+
+#literature {
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    img {
+      transition: filter;
+    }
+    img:hover {
+      filter: brightness(80%);
+    }
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  img {
+    width: 200px; /* задаем желаемую ширину */
+    height: 200px; /* задаем желаемую высоту */
+    object-fit: contain;
+  }
+  
+
+  span {
+    margin-top: 5px;
+  }
+  
+  .program-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .program-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .program-links a:hover {
+    color: #0066cc;
+  }
+
+  .conte { 
+    background-color: #f7f9ff; /* светло-серый цвет */ 
+    padding: 40px; /* увеличенные отступы */ 
+    margin: 0; /* убираем отступы */ 
+    width: 100%; /* ширина на всю ширину экрана */
+    min-height: 300px; /* минимальная высота полосы */ 
+ }
+  
+
+ table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    background: linear-gradient(180deg, #f7f9ff, #f9e5ff);
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+
+
+  .cofg { 
+    background-color: #f7f9ff; /* светло-серый цвет */ 
+    margin-left: 70px;
+    padding: 40px; /* увеличенные отступы */ 
+    width: 85%; /* ширина на всю ширину экрана */
+    min-height: 300px; /* минимальная высота полосы */ 
+ }
+
+ .cofg { 
+  background-color: #f7f9ff; /* светло-серый цвет */ 
+  margin-left: 40px;
+  padding: 20px; /* увеличенные отступы */ 
+  width: 95%; /* ширина на всю ширину экрана */
+  min-height: 30px; /* минимальная высота полосы */ 
+}
+
+ .cofy { 
+  background-color: #ffffff; /* светло-серый цвет */ 
+  padding: 40px; /* увеличенные отступы */ 
+  margin-left: 250px;
+  width: 60%; /* ширина на всю ширину экрана */
+  min-height: 300px; /* минимальная высота полосы */ 
+}
+
+.cof { 
+  background-color: #eaedf8; /* светло-серый цвет */  
+  width: 100%; /* ширина на всю ширину экрана */
+  min-height: 9px; /* минимальная высота полосы */ 
+}
+
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .images {
+    display: flex;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 0 10px;
+    z-index: 10;
+    border-radius: 3px;
+  }
+  
+  .left {
+    left: 10px;
+  }
+  
+  .right {
+    right: 10px;
+  }
+
+
+
+
+.clickable-word {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clickable-word:hover {
+  text-decoration: underline;
+}
+
+.co {
+  display: flex;
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  padding: 20px;
+}
+.contact-info {
+  max-width: 50%; /* Ограничение ширины для контактной информации */
+}
+.telegram-info {
+  display: flex; /* Используем flexbox для размещения изображений рядом */
+  flex-direction: row; /* Заголовок по строки */
+  justify-content: flex-end; /* Выравнивание по правому краю */
+}
+.item {
+  text-align: center; /* Выравнивание текста под изображением */
+  margin: 10px; /* Отступ для элементов */
+}
+
+
+
+.image-text-block {
+  display: flex;
+}
+
+.image-text-block img {
+  max-width: 650%;
+  margin-right: 90px;
+}
+
+.image-text-block p {
+  flex-grow: 15;
+}
+
+.video-container {
+  padding-left: 385px;
+}
+
+
+
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header {
+  padding: 20px;
+  border-bottom: none;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+#chat-box {
+  background-color: #dee7f3;
+  border-radius: 10px;
+}
+
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-secondary {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.question-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.question-btn:hover {
+  background-color: #e9ecef;
+}
+
+/* Стили для эффекта нажатия */
+.question-btn.clicked {
+  background-color: #f8d7da;
+  color: white;
+  transform: scale(0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+#predefinedQuestions ul {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+#predefinedQuestions ul li {
+  display: block;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IArt</title>
+    <link rel="icon" href= "{{ url_for('static', filename='imgs/lgoti.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            margin: 0;
+            height: 1700px;
+        }
+        header {
+            background-image: url("{{ url_for('static', filename='imgs/anime.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;  /*чтобы двигалась картинка*/
+            height: 40vh;
+            width: 100%; 
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 5vh;
+        }
+                /*для нижнего окна*/
+        .footer-content {
+            background-image: url("{{ url_for('static', filename='imgs/anime.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 40vh;
+            width: 100%;
+            margin-top: 110px;
+        }
+        .left-content {
+            flex-grow: 1;
+        }
+
+        .right-content {
+            text-align: right;
+            padding-right: 20px;
+            padding-top: 250px;
+        }
+    </style>
+
+<body>
+    <header>
+        <nav>
+            <button id="dropdown-toggle" style="color: rgb(255, 255, 255);">...</button>
+            <ul id="dropdown-menu" class="hidden">
+                <li><a href="#information" style="color: rgb(255, 255, 255);">О нас</a></li>
+                <li><a href="#video" style="color: rgb(255, 255, 255);">Профессии</a></li>
+                <li><a href="#literature" style="color: rgb(255, 255, 255);">Программы</a></li>
+                <li><a href="#gadjet" style="color: rgb(255, 255, 255);">Оборудование</a></li>
+                <li><a href="#pro" style="color: rgb(255, 255, 255);">Работы художников</a></li>
+                <li><a href="#bot" style="color: rgb(255, 255, 255);">Чат-бот</a></li>
+                <li><a href="#contacts" style="color: rgb(255, 255, 255);">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="photo">
+          <img src="{{ url_for('static', filename='imgs/lgo.png') }}" alt="Logo">
+        </div>
+
+
+        <ul><div class="content">
+            <div class="centered-text">
+                <p>Почему именно мы?</p>
+              </div>
+            <div class="image-container">
+                <div>
+                  <img src="{{ url_for('static', filename='imgs/bl.png') }}" alt="Image 1">
+                    <div class="text-container">
+                        <h3>О проекте</h3>
+                        <p>Приложение для художников, предоставляющая информацию о творчестве в среде виртуальной реальности.</p>
+                    </div>
+                </div>
+                <div>
+                  <img src="{{ url_for('static', filename='imgs/dr.png') }}" alt="Image 2">
+                    <div class="text-container">
+                        <h3>Польза для вас</h3>
+                        <p>Пользователи смогут расширять свои возможности и адаптироваться к постоянно меняющимся технологиям виртуальной реальности. </p>
+                    </div>
+                </div>
+                <div>
+                  <img src="{{ url_for('static', filename='imgs/i (1).jpg') }}" alt="Image 3">
+                    <div class="text-container">
+                        <h3>Развитие</h3>
+                        <p>Будут добавляться новые инструменты и возможности для развития художников в виртуальном пространстве.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    </main>
+
+    <section id="information">
+        <div class="contenty">
+        <div class="info-container">
+            <div class="text">
+                <h1>Информация о приложении</h1>
+                <p>Наше приложение предназначено для всех, кто интересуется рисованием в виртуальной реальности. Здесь вы найдете полезные статьи, отзывы об устройствах и приложениях для создания виртуальных произведений и многое другое.<br><br>
+
+                  Наши специалисты регулярно публикуют новости и обзоры, чтобы вы всегда были в курсе последних трендов в мире виртуального рисования. Мы также предлагаем рекомендации по выбору оборудования и программного обеспечения, чтобы помочь вам начать свое творческое путешествие в виртуальном мире.
+                  
+                  <br><br> На нашем сайте вы сможете найти обзоры лучших приложений для рисования в VR, советы по созданию уникальных проектов, интересные и вдохновляющие истории успешных художников-виртуальщиков.</p>
+                <!--<p>Вы можете добавить здесь любую необходимую информацию.</p> -->
+            </div>
+            <div class="image-contain">
+              <img src="{{ url_for('static', filename='imgs/orig.jfif') }}" alt="Image 1" class="image1">
+              <img src="{{ url_for('static', filename='imgs/pa.webp') }}" alt="Image 2" class="image2">
+            </div>
+        </div>
+    </div>
+    </section>
+    
+    <section id="video">
+        <h2 style="padding-left: 100px;">В каких сферах можно работать?</h2>
+        <div class="cont">
+            <!-- Существующие элементы -->
+            <div class="left-column">
+              <div class="circle-wrapper">
+                <img style="width:100px;height:100px;border-radius:50%;object-fit:cover;" src="{{ url_for('static', filename='imgs/arch.jpg') }}" alt="Изображение 1">
+                <div class="text"><span style="font-weight: bold;">Архитектура и дизайн</span> <br>
+                  <ol>
+                    <li>Создание виртуальных моделей зданий и интерьеров<li>
+                      Разработка дизайна виртуальных пространств и локаций</li>
+              
+                  </ol> </div>
+  
+              </div>
+              
+              <div class="circle-wrapper">
+                <img style="width:100px;height:100px;border-radius:50%;object-fit:cover;" src="{{ url_for('static', filename='imgs/game1.jpg') }}" alt="Изображение 2">
+                <div class="text"><span style="font-weight: bold;">Игровая индустрия</span> <br>
+                
+                  <ol>
+                    <li>Создание концепт-артов и 3D-моделей игровых объектов</li>
+                    <li>Дизайн уровней и окружений в играх</li>
+                    <li>Работа над визуальными эффектами и ключевыми кадрами</li>
+                  </ol>
+                
+                </div>
+              </div>
+              
+              <div class="circle-wrapper">
+                <img style="width:100px;height:100px;border-radius:50%;object-fit:cover;" src="{{ url_for('static', filename='imgs/vr1.jpg') }}" alt="Изображение 3">
+                <div class="text"><span style="font-weight: bold;">Виртуальная реальность и дополненная реальность </span><br> 
+                  <ol>
+                    <li>Архитектор VR/AR пространства - создание уникальных виртуальных локаций</li>
+                    <li>Разработка UI/UX для виртуальной реальности</li>
+                    <li>Сценарист VR - создание сценариев для виртуальных приложений</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+           
+            <!-- Новые элементы -->
+            <div class="right-column">
+              <div class="circle-wrapper1">
+                <img style="width:100px;height:100px;border-radius:50%;object-fit:cover;" src="{{ url_for('static', filename='imgs/naych.png') }}" alt="Изображение 4">
+                <div class="text"> <span style="font-weight: bold;">Научное искусство </span><br> 
+                  <ol>
+                    <li>Science-art - создание визуализаций научных теорий и концепций</li>
+                    <li>Иллюстрация сложных научных идей через виртуальную реальность</li>
+                  </ol>
+                 <br> 
+                </div>
+              </div>
+            
+              <div class="circle-wrapper1">
+                <img style="width:100px;height:100px;border-radius:50%;object-fit:cover;" src="{{ url_for('static', filename='imgs/mark.jpg') }}" alt="Изображение 5">
+                <div class="text"><span style="font-weight: bold;">Маркетинг и реклама </span><br> 
+                  <ol>
+                    <li>Создание виртуальных презентаций продуктов</li>
+                    <li>Разработка виртуальных рекламных кампаний</li>
+                  </ol>
+                  <br> 
+                </div>
+              </div>
+              
+              <div class="circle-wrapper1">  
+                <img style="width:100px;height:100px;border-radius:50%;object-fit:cover;" src="{{ url_for('static', filename='imgs/med.jpg') }}" alt="Изображение 6">
+                <div class="text"><span style="font-weight: bold;">Медицина и здравоохранение </span><br> 
+                  <ol>
+                    <li>Тренировки врачей на виртуальных пациентах</li>
+                    <li>Симуляторы операций и медицинских процедур</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section id="literature">
+        <h2 style="padding-left: 100px;">Программы для рисования</h2>
+        <div class="image-grid">
+            <div class="row">
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/tilt.webp') }}" alt="Описание изображения 1">
+                <span>Tilt Brush</span>
+              </div>
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/logo.png') }}" alt="Описание изображения 2">
+                <span>Open Brush</span>
+              </div>
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/gravity.png') }}" alt="Описание изображения 3">
+                <span>Gravity Sketch</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/adope.avif') }}" alt="Описание изображения 4">
+                <span>Medium by Adobe</span>
+              </div>
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/blocks.png') }}" alt="Описание изображения 5">
+                <span>Blocks</span>
+              </div>
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/ver.jpg') }}" alt="Описание изображения  6">
+                <span>Vermillion</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/ges.jpg') }}" alt="Описание изображения 7">
+                <span>Gesture VR</span>
+              </div>
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/king.png') }}" alt="Описание изображения 8">
+                <span>Kingspray Graffiti</span>
+              </div>
+              <div class="column">
+                <img src="{{ url_for('static', filename='imgs/i.webp') }}" alt="Описание изображения 9">
+                <span>AnimVR</span>
+              </div>
+            </div>
+          </div>                                        
+    </section>
+
+    <div style="max-width: 1500px; padding-left: 100px; padding-right: 100px; margin-top: 120px;" class="conte">
+    <h2>Более подробная информация о программах</h2>
+      <p style="padding-right: 100px;"><strong>• Tilt Brush</strong>: приложение для трёхмерного рисования в виртуальной реальности, разработанное компанией Google. С помощью трёхмерных кистей можно создавать трёхмерные мазки, звёзды, 
+      лучи света, дым и огонь. В качестве холста при этом используется окружающее пространство — виртуальная комната.</p>
+      <p style="padding-right: 100px;"><strong>• Open Brush</strong>: это мощная и интуитивно понятная программа для рисования и создания искусственного интеллекта, разработанная компанией Stability AI. 
+      Предлагает широкий набор инструментов для рисования и живописи в виртуальной реальности.</p>
+      <p style="padding-right: 100px;"><strong>• Gravity Sketch</strong>: это мощное 3D-дизайнерское приложение, разработанное компанией Gravity Sketch Inc. и выпущенное в 2016 году. Предназначено для профессионального использования.</p>
+      <p style="padding-right: 100px;"><strong>• Medium by Adobe</strong>: мощный инструментарий для создания и редактирования изображений, разработанный компанией Adobe.
+      Позволяет создавать 3D-формы из цилиндров.</p>
+      <p style="padding-right: 100px;"><strong>• Blocks</strong>: Простой и интуитивный инструмент для создания 3D-моделей в виртуальной реальности. Базовые геометрические формы для быстрого создания простых 3D-моделей.</p>
+      <p style="padding-right: 100px;"><strong>• Vermillion</strong>: Программа для рисования в виртуальной реальности, специально разработанная для художников,
+      она предлагает уникальный опыт создания живописных работ.</p>
+      <p style="padding-right: 100px;"><strong>• Gestures VR</strong>: Инструмент для создания жестовых рисунков в виртуальной реальности. Позволяет рисовать, используя движения рук.</p>
+      <p style="padding-right: 100px;"><strong>• Kingspray Graffiti</strong>: разработана специально для игрового движка Source Engine, который используется в популярных играх серии Half-Life и Counter-Strike.
+      Программа позволяет пользователям создавать граффити в трехмерном пространстве с использованием различных инструментов и материалов. Идеальна для художников, работающих в стиле граффити.</p>
+      <p style="padding-right: 100px;"><strong>• AnimVR</strong>: Инструмент для создания анимированных рисунков в виртуальной реальности. Позволяет добавлять движение и жизнь в ваши 3D-работы.</p>
+    </div>
+
+    <table style=" margin-top: 70px; margin-left: 100px;">
+      <tr><th>Программа</th><th>Плюсы</th> <th>Минусы</th></tr>
+
+      <tr><td>Tilt Brush</td>
+        <td>- Интуитивно понятный интерфейс
+        <br>- Большой выбор инструментов и эффектов
+        <br>- Возможность создавать сложные и реалистичные формы
+        <br>- Возможность сохранения и обмена созданными эскизами</td>
+
+        <td>- Требует специализированного VR-устройства для работы
+        <br>- Ограничения в размере и детализации создаваемых объектов
+        <br>- Сложности с сохранением и обновлением больших проектов
+        </td></tr>
+
+
+      <tr><td>Open Brush</td>
+        <td>- Поддержка VR-разрешения 
+        <br>- Бесплатное приложение
+        <br>- Широкий выбор инструментов для рисования в 3D пространстве</td>
+        
+        <td>- Меньше функций по сравнению с закрытыми аналогами (Tilt Brush)
+        <br>- Необходимость в специальном VR-шлеме для полноценного использования
+        <br>- Некоторые функции доступны только в продвинутом режиме
+        </td></tr>
+
+
+      <tr><td>Gravity Sketch</td>
+        <td>- Интеграция с популярными инструментами CAD 
+          <br>- Поддержка многопользовательского режима
+          <br>- Простое обучение благодаря встроенному руководству
+          <br>- Возможность работы в реальном времени	</td>
+          
+          <td>- Ограниченная функциональность для сложных проектов
+          <br>- Ограничения в работе с текстурой и материалами
+          <br>- Нет возможности создавать анимации</td></tr>
+
+
+      <tr><td>Medium by Adobe</td>
+        <td>- Хорошая интеграция с другими продуктами Adobe
+          <br>- Широкий набор инструментов для редактирования изображений
+          <br>- Программа Adobe Fresco включает обучающие материалы
+          <br>- Хорошая совместимость с различными операционными системами</td>
+        
+          <td>- Высокая цена для некоторых пользователей
+          <br>- Требует значительных ресурсов компьютера для установки
+          <br>- Необходимо постоянное подключение к интернету</td></tr>
+
+
+      <tr><td>Blocks</td>
+        <td>- Интуитивно понятный интерфейс
+          <br>- Возможность экспорта в различные форматы
+          <br>- Интеграция с 3D-принтерами</td>
+        
+        <td>- Ограниченный функционал по сравнению с профессиональными решениями
+          <br>- Необходимость наличия VR-гарнитуры
+          <br>- Не подходят для профессионального использования</td></tr>
+
+
+      <tr><td>Vermillion</td>
+        <td>- Широкий набор инструментов для рисования
+          <br>- Поддержка VR-устройств от популярных производителей
+          <br>- Приемлемая цена для большинства пользователей
+          <br>- Возможность экспорта рисунков в различные форматы </td>
+        
+        <td>- Некоторые продвинутые инструменты могут отсутствовать
+          <br>- Ограниченный набор инструментов для редактирования готовых рисунков
+          <br>- Возможны проблемы с производительностью на менее мощных устройствах</td></tr>
+
+
+      <tr><td>Gestures VR</td>
+        <td>- Возможность создания собственных жестов
+          <br>- Поддержка различных устройств виртуальной реальности
+          <br>- Поддержка многопользовательской игры
+          <br>- Возможность записи и повторения жестов</td>
+        
+        <td>- Ограниченное количество доступных жестов
+          <br>- Нет поддержки для всех языков и локалей
+          <br>- Высокая цена программы</td>
+
+
+      <tr><td>Kingspray Graffiti</td>
+        <td>- Реалистичное эмуляция процесса создания уличного граффити
+          <br>- Большой выбор цветов и типов баллончиков
+          <br>- Доступно для начинающих и для профессиональных художников
+          <br>- Поддержка различных способов передвижения</td>
+        
+        <td>- Отсутствие функции отмены действий
+          <br>- Интерфейс только на английском языке
+          <br>- Требует специального VR-оборудования</td></tr>
+
+
+      <tr><td>AnimVR</td>
+        <td>-	Большое количество готовых анимаций
+          <br>- Хорошая производительность даже при работе с большими проектами
+          <br>- Поддержка различных форматов файлов 
+          <br>- Документация и видеоуроки доступны на нескольких языках</td>
+        
+        <td>- Качество итоговой анимации зависит от качества используемых элементов
+          <br>- Некоторые параметры сложно настроить без глубокого понимания программы
+          <br>- Ограниченная функциональность для профессиональных аниматоров</td></tr>
+    </table>
+
+    <section id="gadjet"></section>
+    <div style="max-width: 1500px; padding-left: 100px; padding-right: 100px; margin-top: 120px;">
+    <h2>Оборудование для рисования в VR</h2>
+    <div  style="margin-top: 50px;" class="cofg"> 
+      <p>Оборудование для рисования в виртуальной реальности: что это и зачем оно нужно?</p>
+
+      <p>Оборудование для рисования в виртуальной реальности (VR) представляет собой набор технологий и устройств, которые позволяют пользователям создавать художественные произведения в трехмерном пространстве. Это оборудование включает в себя гарнитуры виртуальной реальности, контроллеры, а также графические планшеты, которые могут быть использованы как дополнение.</p>
+        
+      <p>Одной из главных причин использования VR для рисования является создание уникального опыта. Благодаря трехмерному пространству, художники получают возможность работать не только на плоскости, но и внутри своих произведений. Это открывает новые горизонты творчества и позволяет экспериментировать с формами и объемами, которые невозможно реализовать в традиционном рисовании. </p>
+        
+      <p>Кроме того, оборудование для рисования в VR предоставляет удобные и интуитивно понятные инструменты. Специальные контроллеры позволяют точно управлять движениями, а также применять различные текстуры и эффекты в реальном времени. Таким образом, процесс создания искусства становится более захватывающим и увлекательным.</p>
+    </div>
+
+    <div style="padding-left: 400px; margin-top: 70px;">
+    <h2>Сравнение популярных моделей</h2>
+    </div>
+    <div style="padding-left: 100px; margin-top: 15px;">
+    <div class="image-text-block">
+      <img src="{{ url_for('static', filename='imgs/meta.jpg') }}" alt="Description">
+      <p>Meta Quest Pro (более продвинутая версия Oculus Quest) Частота обновления до 120 Гц
+        <br>Преимущества:
+        - Профессиональное качество отображения
+       <br> - Улучшенные функции отслеживания
+      <br>Недостатки:
+        - Очень высокая цена
+       <br> - В тяжёлых приложениях может быть перегрев</p>
+    </div>
+    
+    <div class="image-text-block">
+      <img src="{{ url_for('static', filename='imgs/valve.webp') }}" alt="Description">
+      <p> Valve Index (высококачественный VR шлем от разработчиков Steam) Частота обновления до 144 Гц
+        <br>Преимущества: 
+        - Высокое качество изображения
+        <br>- Инновационные контроллеры с полным трекингом
+        <br>- Большое поле зрения
+      <br> Недостатки: 
+        - Высокая стоимость
+       <br> - Необходимость специальной настройки</p>
+    </div>
+    
+    <div class="image-text-block">
+      <img src="{{ url_for('static', filename='imgs/oculus.png') }}" alt="Description">
+      <p> Oculus Quest 2 (портативный VR шлем без проводов от Meta) Частота обновления до 120 Гц
+        <br>Преимущества: 
+        - Высокое разрешение
+        <br>- Простота в использовании
+        <br>- Большая библиотека приложений
+      <br>Недостатки: 
+        - Ограниченное время работы от батареи
+       <br> - Менее мощный по сравнению с другими ПК-VR системами</p>
+    </div>
+
+    <div class="image-text-block">
+      <img src="{{ url_for('static', filename='imgs/viva.webp') }}" alt="Description">
+      <p>HTC Vive Pro 2 (профессиональный VR шлем для использования с мощным ПК) Частота обновления до 120 Гц
+        <br>Преимущества: 
+        - Высокое разрешение и частота обновления
+        <br>- Хорошая поддержка различных VR-приложений
+        <br>- Качественная система трекинга
+      <br> Недостатки: 
+        - Высокая цена
+       <br> - Требует достаточно места для установки</p>
+    </div>
+
+    <div class="image-text-block">
+      <img src="{{ url_for('static', filename='imgs/pico.jpg') }}" alt="Description">
+      <p>Pico Neo 3 (китайский портативный VR шлем, который конкурирует с Oculus Quest) Частота обновления до 120 Гц
+         <br>Преимущества:
+        - Конкурентоспособная цена
+        <br>- Хорошая автономность
+        <br>Недостатки:
+        <br>- Меньшая библиотека приложений по сравнению с Oculus</p>
+    </div>
+  </div>
+
+    <div  style="margin-top: 50px;" class="cofg"> 
+      <p> Выбор зависит от ваших конкретных потребностей, бюджета и предпочтений в плане портативности vs. качеством. Для начала рекомендуется начать с Oculus Quest 2 или Meta Quest Pro, так как они наиболее доступны и просты в использовании, а для профессионалов лучше рассмотреть HTC Vive Pro 2 или Valve Index.</p>
+    </div>
+
+    </div>
+
+    <section id="pro">
+      <div style="margin-top: 90px;"></div>
+      <h2 style="padding-left: 100px;">Работы VR-художников </h2>
+      <div style="margin-top: 60px;"  class="cofy">
+        <div class="carousel">
+          <button class="arrow left" onclick="moveSlide(-1)">&#9664;</button>
+          <div class="images">
+              <img src="{{ url_for('static', filename='imgs/primer3.jpg') }}" alt="Image 1">
+              <img src="{{ url_for('static', filename='imgs/primer6.webp') }}" alt="Image 2">
+              <img src="{{ url_for('static', filename='imgs/primer8.jpg') }}" alt="Image 3">
+              <img src="{{ url_for('static', filename='imgs/primer9.jpg') }}" alt="Image 4">
+              <img src="{{ url_for('static', filename='imgs/primer10.jpg') }}" alt="Image 5">
+              <img src="{{ url_for('static', filename='imgs/primer12.jpg') }}" alt="Image 6">
+              <img src="{{ url_for('static', filename='imgs/primer13.jpg') }}" alt="Image 6">
+              <img src="{{ url_for('static', filename='imgs/primer14.jpg') }}" alt="Image 6">
+          </div>
+          <button class="arrow right" onclick="moveSlide(1)">&#9654;</button>
+        </div>
+      </div>
+      <h2 style="padding-left: 100px;">Видеоролик </h2>
+      <div class="video-container">
+      <video width="720" height="480" controls>
+        <source src="{{ url_for('static', filename='imgs/video1.mp4') }}" type="video/mp4">
+      </video>
+    </div>
+      
+    </section>
+
+    <script>
+     let index = 0;
+
+      function moveSlide(direction) {
+          const slides = document.querySelectorAll('.images img');
+          const totalSlides = slides.length;
+
+          // Обновляем индекс с учетом направления
+          index = (index + direction + totalSlides) % totalSlides;
+
+          // Плавный переход
+          slides.forEach((img, i) => {
+              img.style.transform = `translateX(${(i - index) * 100}%)`; // Сдвигаем слайды в зависимости от текущего индекса
+          });
+      }
+
+      // Инициализация отображения слайдов
+      document.addEventListener('DOMContentLoaded', () => {
+          const slides = document.querySelectorAll('.images img');
+          slides.forEach((img) => {
+              img.style.position = 'absolute'; // Установите позиционирование
+              img.style.transition = 'transform 0.5s'; // Устанавливаем плавный переход для transform
+              img.style.transform = 'translateX(100%)'; // Сразу сдвигаем все слайды вправо
+          });
+          slides[index].style.transform = 'translateX(0)'; // Показываем первый слайд
+      });
+
+    </script>
+
+
+<section id="bot" style="padding-top: 70px;">
+  <div class="chat-container">
+      <div class="container mt-5">
+          <div class="card shadow-sm">
+              <div class="card-header bg-light">
+                  <div style="padding-left: 100px; padding-right: 100px;">
+                      <h2>Чат-бот</h2>
+                  </div>
+              </div>
+              <div class="card-body">
+                  <!-- Chat box -->
+                  <div id="chat-box" class="border rounded-0 p-3 mb-3" style="height: 400px; width: 600px; overflow-y: auto; background-color: #ebf0fa;">
+                      <!-- Messages will be added here -->
+                  </div>
+                  
+                  <!-- Form for inputting messages -->
+                  <form id="gpt4freeForm" class="d-flex">
+                      <input type="text" name="user_input" class="form-control me-2" placeholder="Введите сообщение" required>
+                      <button type="submit" class="btn btn-primary">Отправить</button>
+                  </form>
+                  
+                  <button class="btn btn-outline-secondary mt-2" onclick="clearChat()">Очистить чат</button>
+                  
+                  <!-- List of pre-defined questions -->
+                  <div id="predefinedQuestions" style="margin-top: 20px;">
+                      <h3>Выберите вопрос:</h3>
+                      <ul id="questionList"></ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // List of predefined questions and answers
+  const predefinedQuestions = [
+      { question: "Как дела?", answer: "Отлично, спасибо!" },
+      { question: "В каких сферах можно работать?", answer: "Есть множество разных сфер, например: архитектура, дизайн, гровая индустрия, научное искусство, маркетинг и реклама, медицина, виртуальная реальность" },
+      { question: "Какую программу лучше выбрать?", answer: "Для начинающего художника: Tilt Brush - отличный выбор для экспериментов и базового обучения, Medium by Adobe - хорошее сочетание простоты и возможностей. Для продвинутого художника: Gravity Sketch - лучший выбор для сложных проектов и профессионального использования, Gestures VR - идеально подходит для создания уникальных и интерактивных работ" },
+      { question: "Где можно увидеть VR рисунки?", answer: "Рисунки на данном сайте были взяты из открытой галлереи, а также у различных художников, которые поделились своими работами в интернете. Однако есть и другие места, напрмер целые пециализированные VR арт-галереи в которые можно купить билет, а также платформы для просмотра VR рисунков (Sketchfab, ArtStation и др.)" },
+      { question: "Где можно купить оборудование?", answer: "Вот некоторые популярные варианты: Онлайн-магазины (Amazon, Best Buy, Newegg, Microsoft Store), Официальные сайты производителей, физические магазины, но убедитесь, что ваша местность имеет доступ к магазинам этих ритейлеров, так как некоторые из них могут предлагать возможность личной доставки или возврата в магазине." },
+      { question: "Кто создатели сайта?", answer: "Создателями сайта являются: Шаповалова Вероника и Владимиров Олег, студенты группы 2бИТС2" }
+  ];
+
+  // Function to initialize the chatbot
+  function initializeChatbot() {
+      // Display greeting
+      const chatBox = document.getElementById("chat-box");
+      chatBox.insertAdjacentHTML('beforeend', `<p><strong>Бот:</strong> Здравствуйте! Я готов помочь вам с любыми вопросами.</p>`);
+
+      // Display predefined questions
+      displayPredefinedQuestions();
+  }
+
+ // Функция для отображения списка предопределенных вопросов
+ function displayPredefinedQuestions() {
+    const questionList = document.getElementById("questionList");
+    questionList.innerHTML = '';
+    
+    predefinedQuestions.forEach((q, index) => {
+        const li = document.createElement('li');
+        li.className = 'question-btn';
+        li.textContent = q.question;
+        li.addEventListener('click', () => selectQuestion(index));
+        
+        // Wrap long lines
+        const textNodes = li.textContent.split('\n');
+        let wrappedText = '';
+        textNodes.forEach((node, i) => {
+            if (i > 0 && node.trim() !== '') {
+                wrappedText += '\n';
+            }
+            wrappedText += node + ' ';
+        });
+        
+        li.textContent = wrappedText;
+        
+        questionList.appendChild(li);
+    });
+}
+
+
+// Функция для обработки выбора предопределенного вопроса
+function selectQuestion(index) {
+    const chatBox = document.getElementById("chat-box");
+    const selectedQuestion = chatBox.lastChild;
+    
+    // Проверяем, не был ли вопрос уже выбран
+    if (selectedQuestion && selectedQuestion.textContent.includes(`Бот: ${predefinedQuestions[index].answer}`)) {
+        return; // Возвращаемся из функции, если вопрос уже был выбран
+    }
+
+    // Добавляем эффект нажатия
+    const selectedLi = document.querySelector(`.question-btn:nth-child(${index + 1})`);
+    selectedLi.style.backgroundColor = '#f8d7da';
+    selectedLi.style.color = 'white';
+    selectedLi.style.transform = 'scale(0.95)';
+    selectedLi.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    
+    chatBox.insertAdjacentHTML('beforeend', `<p><strong>Бот:</strong> ${predefinedQuestions[index].answer}</p>`);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Убираем эффект после некоторого времени
+    setTimeout(() => {
+        const allButtons = document.querySelectorAll('.question-btn');
+        allButtons.forEach(btn => {
+            btn.style.backgroundColor = '';
+            btn.style.color = '';
+            btn.style.transform = '';
+            btn.style.boxShadow = '';
+        });
+    }, 300); // 300 мс = 0.3 секунды
+}
+
+// Функция для очистки чата
+function clearChat() {
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML = "";
+}
+
+// Инициализация чат-бота при загрузке страницы
+document.addEventListener("DOMContentLoaded", initializeChatbot);
+
+// Добавление обработчика событий для формы отправки сообщения
+document.getElementById("gpt4freeForm").addEventListener("submit", submitQuery);
+
+// Добавление обработчика событий для кликов по вопросам
+document.addEventListener('click', function(e) {
+    if (e.target.matches('.question-btn')) {
+        e.preventDefault();
+        const index = Array.from(e.target.parentNode.children).indexOf(e.target);
+        selectQuestion(index);
+    }
+});
+
+  // Function to handle user input
+  function submitQuery(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(document.getElementById("gpt4freeForm"));
+      fetch("/gpt4free_query", {
+          method: "POST",
+          body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+          const chatBox = document.getElementById("chat-box");
+          
+          // Отображение сообщения пользователя
+          chatBox.insertAdjacentHTML('beforeend', `<p><strong>Вы:</strong> ${formData.get("user_input")}</p>`);
+          
+          // Отображение ответа от AI
+          const aiResponse = data.response;
+          
+          chatBox.insertAdjacentHTML('beforeend', `<p><strong>Бот:</strong> ${aiResponse}</p>`);
+          
+          // Прокручиваем чат вниз
+          chatBox.scrollTop = chatBox.scrollHeight;
+          
+          // Очищаем поле ввода
+          document.getElementById("gpt4freeForm").reset();
+      })
+      .catch(error => console.error("Error:", error));
+  }
+
+  // Function to handle predefined question selection
+  function selectQuestion(index) {
+    // Проверяем, не был ли вопрос уже выбран
+    const chatBox = document.getElementById("chat-box");
+    const lastMessage = chatBox.lastChild;
+    if (lastMessage && lastMessage.textContent.includes(`Бот: ${predefinedQuestions[index].answer}`)) {
+        return; // Возвращаемся из функции, если вопрос уже был выбран
+    }
+
+    chatBox.insertAdjacentHTML('beforeend', `<p><strong>Бот:</strong> ${predefinedQuestions[index].answer}</p>`);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+</script>
+
+
+
+
+
+
+    
+
+    <div style=" margin-top: 70px;"class="cof"></div>
+    <section id="contacts">
+      <div style="margin-left: 100px;">
+        <h2>Контакты</h2>
+
+        <div class="co">
+          <div class="contact-info">
+            <p>Телефон: +7 (977) 423-73-32</p>
+            <p style="padding-left: 75px;">+7 (985) 952-92-17</p>
+            <p style="padding-top: 60px;">Email: shapovalovaveronique@yandex.ru </p>
+            <p style="padding-left: 48px;">olegatorvladimirov@gmail.com</br></p>
+          </div>
+      
+          <div style="padding-left: 350px;" class="telegram-info">
+                <div class="item">
+                  <img src="{{ url_for('static', filename='imgs/nika.jpg') }}" alt="Описание изображения 1">
+                  <p><a href="https://t.me/shap_veronika" class="clickable-word">Вероника</a></p>
+                </div>
+                <div style="padding-left: 100px;"class="item">
+                  <img src="{{ url_for('static', filename='imgs/oleg.jpg') }}" alt="Описание изображения 2">
+                  <p>Олег</p>
+                </div>
+          </div>
+      </div>
+
+    </section>
+ 
+    
+    <footer>
+            <!--div class="bottom-right-text">
+                <p>Ваш текст здесь</p>
+            </div>-->
+        <div class="footer-content">
+            <div class="left-content">
+                <!-- Здесь размещайте основной контент footer'а -->
+            </div>
+            <div class="right-content">
+                <p style="color: #e9dae8;">&copy; 2024 iArt</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+ 
+</body>
+</html>
